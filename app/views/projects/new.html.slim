@@ -10,6 +10,16 @@
         = semantic_form_for @project, html: { id: 'project_form' } do |form|
           = form.inputs do
             .input.control-group.error
+            / div class="input control-group #{ 'error' if @project.errors[:name].present?}"
+            .input
+              .bootstrap-alert
+                span
+                .alert
+                  .important= t('.name_important')
+              = form.label :name, t('formtastic.labels.project.name')
+              = form.text_field :name, class: "#{'error' if @project.errors[:name].present?}"
+              p.inline-hints= t('formtastic.hints.project.name')
+
             .input
               .bootstrap-alert
                 span
@@ -21,16 +31,6 @@
                 = form.text_field :permalink, pattern: '^(\w|-)+$', class: "permalink #{'error' if @project.errors[:permalink].present?}"
                 p.inline-hints
                   = t('.permalink_hint')
-
-            / div class="input control-group #{ 'error' if @project.errors[:name].present?}"
-            .input
-              .bootstrap-alert
-                span
-                .alert
-                  .important= t('.name_important')
-              = form.label :name, t('formtastic.labels.project.name')
-              = form.text_field :name, class: "#{'error' if @project.errors[:name].present?}"
-              p.inline-hints= t('formtastic.hints.project.name')
 
             .input
               .bootstrap-alert
@@ -101,20 +101,9 @@
               .bootstrap-alert
                 span
                 .alert
-                  .important= t('.first_backers_important')
-              = form.label :first_backers, t('formtastic.labels.project.first_backers')
-              = form.text_area :first_backers, class: "#{'error' if @project.errors[:first_backers].present?}"
-              p.inline-hints= t('formtastic.hints.project.first_backers')
-
-            .input
-              .bootstrap-alert
-                span
-                .alert
                   .important= t('.how_know_important')
               = form.label :how_know, t('formtastic.labels.project.how_know')
               = form.text_area :how_know, class: "#{'error' if @project.errors[:how_know].present?}"
-
-
 
             .clearfix
             .submit

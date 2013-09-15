@@ -38,18 +38,18 @@ App.views.ProjectForm.addChild('Permalink', _.extend({
   el: 'input#project_permalink',
 
   events: {
-    'timedKeyup' : 'checkPermalink'
+    'timedKeyup' : 'checkPermalink',
   },
 
   checkPermalink: function(){
-    var that = this;
-    if(this.re.test(this.$el.val())){
-      $.get('/pt/' + this.$el.val()).complete(function(data){
-        if(data.status != 404){
-          that.$el.trigger('invalid');
-        }
-      });
-    }
+    // var that = this;
+    // if(this.re.test(this.$el.val())){
+    //   $.get('/pt/' + this.$el.val()).complete(function(data){
+    //     if(data.status != 404){
+    //       that.$el.trigger('invalid');
+    //     }
+    //   });
+    // }
   },
 
   activate: function(){
@@ -57,4 +57,28 @@ App.views.ProjectForm.addChild('Permalink', _.extend({
     this.setupTimedInput();
   }
 }, Skull.TimedInput));
+
+App.views.ProjectForm.addChild('ProjectName', _.extend({
+  el: 'input#project_name',
+
+  events: {
+    'blur' : 'fillSuggestionForPermalink',
+  },
+
+  fillSuggestionForPermalink: function(){
+    var that = this;
+    if (_.isString(that.el.value) && that.el.value !== "") {
+      var suggestedPermalink = that.el.value.latinise();
+      suggestedPermalink = suggestedPermalink.toLowerCase()
+      suggestedPermalink = suggestedPermalink.replace(/\s/g, "-");
+      suggestedPermalink = suggestedPermalink.replace(/:/g, "-");
+      $("input#project_permalink").val(suggestedPermalink);
+    }
+  },
+
+  activate: function(){
+    this.re = new RegExp(this.$el.prop('pattern'));
+    this.fillSuggestionForPermalink();
+  }
+}, Skull.ProjectName));
 
