@@ -2,8 +2,9 @@
 class ProjectsController < ApplicationController
   load_and_authorize_resource only: [ :new, :create, :update, :destroy ]
   inherit_resources
+  has_scope :pg_search, :by_category_id, :near_of
+  has_scope :recent, :expiring, :successful, :recommended, :not_expired, type: :boolean
 
-  has_scope :pg_search, :by_category_id, :recent, :expiring, :successful, :recommended, :not_expired, :near_of
   respond_to :html
   respond_to :json, only: [:index, :show, :update]
 
@@ -14,15 +15,15 @@ class ProjectsController < ApplicationController
           @projects = apply_scopes(Project).visible.order_for_search.includes(:project_total, :user, :category).page(params[:page]).per(6)
           return render partial: 'project', collection: @projects, layout: false
         else
-
           @title = t("site.title")
-          @recommends = if current_user && current_user.recommended_projects.present?
-                            current_user.recommended_projects.limit(3)
-                          else
-                            ProjectsForHome.recommends
-                          end
+          if current_user && current_user.recommended_projects.present?
+            @recommends = current_user.recommended_projects.limit(3)
+          else
+            @recommends = ProjectsForHome.recommends
+          end
 
-          @projects_near = Project.online.near_of(current_user.address_state).order("random()").limit(3) if current_user
+          @channel_projects = Project.from_channels.order_for_search.limit(3)
+          @projects_near = Project.with_state('online').near_of(current_user.address_state).order("random()").limit(3) if current_user
           @expiring = ProjectsForHome.expiring
           @recent   = ProjectsForHome.recents
         end
@@ -54,7 +55,6 @@ class ProjectsController < ApplicationController
 
   def show
     @title = resource.name
-    @rewards = resource.rewards.includes(:project).rank(:row_order).all
     fb_admins_add(resource.user.facebook_id) if resource.user.facebook_id
     @updates_count = resource.updates.count
     @update = resource.updates.where(id: params[:update_id]).first if params[:update_id].present?

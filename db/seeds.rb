@@ -3,12 +3,38 @@
 puts 'Seeding the database...'
 
 [
-  { pt: 'Porto Alegre', en: 'Porto Alegre' },
-  { pt: 'Rio de Janeiro', en: 'Rio de Janeiro' },
-  { pt: 'São Paulo', en: 'São Paulo' },
-  { pt: 'Floripa', en: 'Floripa' }
+  { pt: 'Arte', en: 'Art' },
+  { pt: 'Artes plásticas', en: 'Visual Arts' },
+  { pt: 'Circo', en: 'Circus' },
+  { pt: 'Comunidade', en: 'Community' },
+  { pt: 'Humor', en: 'Humor' },
+  { pt: 'Quadrinhos', en: 'Comicbooks' },
+  { pt: 'Dança', en: 'Dance' },
+  { pt: 'Design', en: 'Design' },
+  { pt: 'Eventos', en: 'Events' },
+  { pt: 'Moda', en: 'Fashion' },
+  { pt: 'Gastronomia', en: 'Gastronomy' },
+  { pt: 'Cinema & Vídeo', en: 'Film & Video' },
+  { pt: 'Jogos', en: 'Games' },
+  { pt: 'Jornalismo', en: 'Journalism' },
+  { pt: 'Música', en: 'Music' },
+  { pt: 'Fotografia', en: 'Photography' },
+  { pt: 'Ciência e Tecnologia', en: 'Science & Technology' },
+  { pt: 'Teatro', en: 'Theatre' },
+  { pt: 'Esporte', en: 'Sport' },
+  { pt: 'Web', en: 'Web' },
+  { pt: 'Carnaval', en: 'Carnival' },
+  { pt: 'Arquitetura & Urbanismo', en: 'Architecture & Urbanism' },
+  { pt: 'Literatura', en: 'Literature' },
+  { pt: 'Mobilidade e Transporte', en: 'Mobility & Transportation' },
+  { pt: 'Meio Ambiente', en: 'Environment' },
+  { pt: 'Negócios Sociais', en: 'Social Business' },
+  { pt: 'Educação', en: 'Education' },
+  { pt: 'Filmes de Ficção', en: 'Fiction Films' },
+  { pt: 'Filmes Documentários', en: 'Documentary Films' },
+  { pt: 'Filmes Universitários', en: 'Experimental Films' }
 ].each do |name|
-   category = Category.find_or_initialize_by_name_pt name[:pt]
+   category = Category.find_or_initialize_by(name_pt: name[:pt])
    category.update_attributes({
      name_en: name[:en]
    })
@@ -22,51 +48,47 @@ puts 'Seeding the database...'
   'project_in_wainting_funds', 'credits_warning', 'backer_confirmed_after_project_was_closed',
   'backer_canceled_after_confirmed', 'new_user_registration'
 ].each do |name|
-  NotificationType.find_or_create_by_name name
+  NotificationType.find_or_create_by(name: name)
 end
 
 {
-  company_name: 'Mútuo',
-  host: 'mutuo.cc',
-  base_url: "http://mutuo.cc",
-  blog_url: "http://blog.mutuo.cc",
-  email_contact: 'contato@mutuo.cc',
-  email_payments: 'financeiro@mutuo.cc',
-  email_projects: 'projetos@mutuo.cc',
-  email_system: 'system@mutuo.cc',
-  email_no_reply: 'no-reply@mutuo.cc',
-  facebook_url: "http://facebook.com/mutuo.cc",
-  facebook_app_id: '1405409603010977',
-  twitter_username: "mutuo_cc",
+  company_name: 'Catarse',
+  host: 'catarse.me',
+  base_url: "http://catarse.me",
+  blog_url: "http://blog.catarse.me",
+  email_contact: 'contato@catarse.me',
+  email_payments: 'financeiro@catarse.me',
+  email_projects: 'projetos@catarse.me',
+  email_system: 'system@catarse.me',
+  email_no_reply: 'no-reply@catarse.me',
+  facebook_url: "http://facebook.com/catarse.me",
+  facebook_app_id: '173747042661491',
+  twitter_username: "catarse",
   mailchimp_url: "http://catarse.us5.list-manage.com/subscribe/post?u=ebfcd0d16dbb0001a0bea3639&amp;id=149c39709e",
-  catarse_fee: '0.15',
-  support_forum: 'http://suporte.mutuo.cc/',
-  base_domain: 'mutuo.cc',
+  catarse_fee: '0.13',
+  support_forum: 'http://suporte.catarse.me/',
+  base_domain: 'catarse.me',
   uservoice_secret_gadget: 'change_this',
-  uservoice_key: 'uservoice_key',
-  project_finish_time: '02:59:59'
+  uservoice_key: 'uservoice_key'
 }.each do |name, value|
-   conf = Configuration.find_or_initialize_by_name name
+   conf = Configuration.find_or_initialize_by(name: name)
    conf.update_attributes({
      value: value
-   })
+   }) if conf.new_record?
 end
 
 
-Channel.find_or_create_by_name!(
-  name: "Channel name",
-  permalink: "sample-permalink",
-  description: "Lorem Ipsum"
-)
+Channel.find_or_create_by!(name: "Channel name") do |c|
+  c.permalink = "sample-permalink"
+  c.description = "Lorem Ipsum"
+end
 
 
-OauthProvider.find_or_create_by_name!(
-  name: 'facebook',
-  key: '1405409603010977',
-  secret: '72712d7f5780efbac72e28add09b1ec0',
-  path: 'facebook'
-)
-
+OauthProvider.find_or_create_by!(name: 'facebook') do |o|
+  o.key = 'your_facebook_app_key'
+  o.secret = 'your_facebook_app_secret'
+  o.path = 'facebook'
+end
 
 puts
 puts '============================================='

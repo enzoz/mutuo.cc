@@ -24,5 +24,4 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       end
     end
   end
-  add_providers
 end

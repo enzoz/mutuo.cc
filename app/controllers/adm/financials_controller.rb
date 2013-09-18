@@ -3,7 +3,7 @@ class Adm::FinancialsController < Adm::BaseController
   inherit_resources
   defaults  resource_class: Project, collection_name: 'projects', instance_name: 'project'
   menu I18n.t("adm.financials.index.menu") => Rails.application.routes.url_helpers.adm_financials_path
-  has_scope :by_permalink, :name_contains, :user_name_contains, :financial, :by_state, :by_progress
+  has_scope :by_permalink, :name_contains, :user_name_contains, :financial, :with_state, :by_progress
   has_scope :between_expires_at, using: [ :start_at, :ends_at ], allow_blank: true
 
   actions :index
@@ -29,13 +29,13 @@ class Adm::FinancialsController < Adm::BaseController
             csv << [project.name,
                     project.user.moip_login,
                     project.display_goal,
-                    "#{project.display_pledged} (#{project.progress}%)",
-                    "#{view_context.number_to_currency project.total_payment_service_fee, precision: 2 }",
-                    "#{view_context.number_to_currency catarse_fee, precision: 2 } (#{view_context.number_to_currency project.pledged - catarse_fee, precision: 2 })",
-                    "#{view_context.number_to_currency project.pledged*0.87, precision: 2 }",
-                     "#{project.display_expires_at} (#{I18n.l(8.weekdays_from(project.expires_at).to_date)})",
-                     "#{adm_reports_backer_reports_url(project_id: project.id, format: :csv)}",
-                     project.state
+                    project.display_pledged,
+                    view_context.number_to_currency(project.total_payment_service_fee, precision: 2),
+                    view_context.number_to_currency(catarse_fee, precision: 2),
+                    view_context.number_to_currency(project.pledged*0.87, precision: 2),
+                    project.display_expires_at,
+                    adm_reports_backer_reports_url(project_id: project.id, format: :csv),
+                    project.state
             ]
           end
         end

@@ -17,7 +17,6 @@
 //= require ./lib/underscore.js
 //= require ./lib/backbone.js
 //= require ./lib/skull.js
-//= require ./lib/latinise.min.js
 //= require ./app/app.js
 //= require_tree ./lib
 //= require_tree ./app

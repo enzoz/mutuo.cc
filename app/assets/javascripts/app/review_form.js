@@ -15,11 +15,16 @@ App.addChild('ReviewForm', _.extend({
     if(this.validate()){
       $('#payment').show();
       this.updateBacker();
+    } else {
+      return false;
     }
   },
 
   activate: function(){
     this.setupForm();
+    if(this.$('#live_in_brazil:checked').length == 0){
+      this.$('fieldset.address_data').hide();
+    }
   },
 
   updateBacker: function(){

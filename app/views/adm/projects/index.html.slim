@@ -22,8 +22,8 @@
               = text_field_tag 'between_created_at[ends_at]', (params[:between_created_at][:ends_at] if params[:between_created_at].present?), class: 'input-small'
 
             .input
-              = label_tag :by_state, t('.by_state')
-              = select_tag :by_state, options_for_select(Project.state_names, params[:by_state]), include_blank: true
+              = label_tag :with_state, t('.with_state')
+              = select_tag :with_state, options_for_select(Project.state_names, params[:with_state]), include_blank: true
 
             .input
               = label_tag :pg_search, t('.project')
@@ -69,7 +69,13 @@
             tbody
               - @projects.includes(:category).each do |project|
                 tr id=project.id class=cycle("even", "odd")
-                  td= link_to project.name, project_by_slug_path(permalink: project.permalink)
+                  td
+                    = link_to project.name, project_by_slug_path(permalink: project.permalink)
+                    - if project.channels.present?
+                      | &nbsp;
+                      - project.channels.each do |channel|
+                        span.label.label-inverse= channel.name
+                        | &nbsp;
                   td= project.category
                   td= best_in_place [:adm, project], :user_id, method: :put, type: :input
                   td= best_in_place [:adm, project], :goal, method: :put, type: :input, display_as: :display_goal
