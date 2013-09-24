@@ -1,4 +1,4 @@
-Catarse::Application.configure do
+Mutuo::Application.configure do
   Slim::Engine.set_default_options pretty: true
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -19,6 +19,8 @@ Catarse::Application.configure do
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
+
+  config.assets.logger = false
 
   # Raise an error on page load if there are pending migrations
   config.active_record.migration_error = :page_load
