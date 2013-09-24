@@ -28,9 +28,9 @@ Catarse::Application.routes.draw do
   mount CatarseMoip::Engine => "/", as: :catarse_moip
 
   # Channels
-  constraints subdomain: 'asas' do
+  constraints subdomain: /^(?!www|secure|test|local)(\w+)/ do
     namespace :channels, path: '' do
-      namespace :adm do
+      namespace :admin do
         namespace :reports do
           resources :subscriber_reports, only: [ :index ]
         end
@@ -115,7 +115,7 @@ Catarse::Application.routes.draw do
     end
   end
 
-  namespace :adm do
+  namespace :admin do
     resources :projects, only: [ :index, :update, :destroy ] do
       member do
         put 'approve'
