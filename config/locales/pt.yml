@@ -1,4 +1,7 @@
 pt:
+  not_found:
+    title: "Não encontramos esse endereço :("
+    text: "Você pode ter digitado errado o endereço ou a página pode ter sido movida."
   sending: 'Enviando...'
   failure_title: 'Por favor, corrija os seguintes erros:'
   uservoice_gadget:
@@ -50,6 +53,9 @@ pt:
   edit_project: 'Editar projeto'
   days: 'dias'
   controllers:
+    updates:
+      create:
+        notice: 'Novidade enviada com sucesso!'
     rewards:
       create:
         notice: 'Recompensa adicionada com sucesso!'
@@ -105,32 +111,25 @@ pt:
       discover: "Descubra projetos"
     texts:
       copyleft: "Feito com amor."
-      info: "informações úteis"
-      opendata: "estatísticas bacanas"
-      social: "curtiu o mútuo?"
-      newsletter: "receba nossa newsletter"
-    stats:
-      backers: Apoiadores
-      backs: Apoios
-      total_backed: Arrecadados
-      users: Usuários
-      funded_projects: "Projetos bem-sucedidos"
-      active_projects: "Projetos no ar agora"
   main:
     links:
-      selected: "explore mais projetos selecionados"
-      expiring: "explore mais projetos na reta final"
-      recents: "explore mais projetos recentes"
-      near: "explore mais projetos próximos"
+      channels: "Descubra o Canal Asas"
+      selected: "Descubra projetos selecionados"
+      expiring: "Descubra projetos na reta final"
+      recents: "Descubra projetos recentes"
+      near: "Descubra projetos perto de você"
+    banner: "10 milhões transformados em ações. Obrigado!"
   sidebar:
     titles:
       blog: blog
       facebook: "já curtiu nosso face?"
-      newsletter: "quer novidades?"
+      newsletter: "Assine nossa news"
       faq: "tá com dúvida?"
       schedule: agenda
+    placeholders:
+      email: "Digite seu email"
     buttons:
-      newsletter: assinar
+      newsletter: Enviar
   sections:
     near:
       title: 'Próximos a mim'
@@ -140,7 +139,7 @@ pt:
       title: "Na reta final"
     recents:
       title: "Novos e fresquinhos"
-    partners:
+    channels:
       title: 'Parceiros'
   accept_terms_html: "Eu li e estou de acordo com os %{link}."
   activerecord:
@@ -225,7 +224,7 @@ pt:
     index:
       back_date: "Data do apoio"
       current_credits_html: "Seu saldo atual é de <span id=\"current_credits\">%{credits}</span> em créditos."
-      important_html: "Para saber todas as regras de funcionamento de reembolso, <a href='http://suporte.mutuo.me/knowledgebase/articles/164746-regras-e-funcionamento-dos-reembolsos-estornos' target='_blank'>clique aqui</a>. Qualquer dúvida, acesse nosso <a href='http://suporte.mutuo.me' target='_blank'>suporte</a>."
+      important_html: "Para saber todas as regras de funcionamento de reembolso, <a href='http://suporte.mutuo.cc/knowledgebase/articles/164746-regras-e-funcionamento-dos-reembolsos-estornos' target='_blank'>clique aqui</a>. Qualquer dúvida, acesse nosso <a href='http://suporte.mutuo.me' target='_blank'>suporte</a>."
       project: Projeto
       refund_expration_date: "Prazo para estorno"
       refunded: "Reembolso requisitado com sucesso. Nossa equipe entrará em contato com você em até 2 dias úteis. "
@@ -341,8 +340,8 @@ pt:
       faq: FAQ
       signup: cadastre-se
       signin: login
-      explore: explore
-      submit_project: envie
+      discover: Descubra
+      submit: Envie seu bem
       profile: "meu perfil"
       account: "minha conta"
     user:
@@ -400,6 +399,7 @@ pt:
   projects:
     box:
       by: por
+      when: em
     admin_fields:
       title: "Campos para o admin"
     back_project:
@@ -532,6 +532,8 @@ pt:
       reached: atingido
     project_backers:
       empty: "Ninguém apoiou este projeto ainda. Que tal ser o primeiro?"
+      confirmed: "Confirmados"
+      pending: "Pendentes"
     project_header:
       subtitle_html: "Um projeto de %{link}"
       without_city: "Um projeto de %{category_name} por %{author}"
@@ -544,6 +546,7 @@ pt:
       title: "Título da sua Novidade"
       destroy: "Remover Novidade"
       destroy_confirmation: "Deseja remover esta novidade?"
+      warning: 'Lembrando que todo post de novidade vai diretamente para o email de seus apoiadores. Por isso, revise bem seu texto antes de enviá-lo.'
     rewards:
       new_reward: "Cadastrar recompensa"
       edit_reward: "Editar recompensa"
@@ -842,6 +845,11 @@ pt:
         email: "Me envie um email"
         facebook: "Perfil no facebook"
         twitter: "Perfil no twitter"
+    project:
+      confirmed: "Confirmado"
+      refunded: "Reembolsado"
+      requested_refund: "Estorno solicitado"
+      waiting_confirmation: "Aguardando Confirmação"
     backs:
       anonymous: "Apoio anônimo."
       no_backs: "%{name} ainda não apoiou nenhum projeto. Mas a gente sabe que é só questão de tempo! :D"
