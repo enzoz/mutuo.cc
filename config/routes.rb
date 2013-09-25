@@ -28,7 +28,7 @@ Mutuo::Application.routes.draw do
   mount CatarseMoip::Engine => "/", as: :catarse_moip
 
   # Channels
-  constraints subdomain: /^(?!www|secure|test|local)(\w+)/ do
+  constraints subdomain: /^(?!www|secure|test|local|mutuo-dev)(\w+)/ do
     namespace :channels, path: '' do
       namespace :admin do
         namespace :reports do
