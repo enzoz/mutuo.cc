@@ -20,15 +20,12 @@ footer.footer
             li= link_to t('footer.links.support'), "#{::Configuration[:support_url]}", target: '_blank'
             li= link_to t('footer.links.terms'), "#{::Configuration[:terms_url]}", target: '_blank'
             li= link_to t('footer.links.privacy'), "#{::Configuration[:privacy_url]}", target: '_blank'
-            //li= link_to t('footer.links.press'), "#{::Configuration[:press_url]}", target: '_blank'
       .footer-div
         .footer-list
           h3.footer-title= t('footer.titles.contact')
           ul.footer-list
             li= link_to t('footer.links.twitter'), "#{::Configuration[:twitter_url]}", target: '_blank'
             li= link_to t('footer.links.facebook'), "#{::Configuration[:facebook_url]}", target: '_blank'
-            li= link_to t('footer.links.instagram'), "#{::Configuration[:instagram_url]}", target: '_blank'
-            li= link_to t('footer.links.github'), "#{::Configuration[:github_url]}", target: '_blank'
             li= link_to t('footer.links.blog'), "#{::Configuration[:blog_url]}", target: '_blank'
             li= link_to t('footer.links.contato'), "#{::Configuration[:contato_url]}", target: '_blank'
       .footer-div
@@ -45,4 +42,4 @@ footer.footer
             li= link_to t('footer.links.discover'), explore_path
     hr
     .row
-        p.copyleft= "#{t('footer.texts.copyleft')} Catarse, 2013 | Open source #{link_to 'Catarse @ Github', "#{::Configuration[:github_url]}", :class => 'github', target: '_blank'}".html_safe
+        p.copyleft= "#{t('footer.texts.copyleft')} Mutuo.cc, 2013 | Open source #{link_to 'Catarse @ Github', "#{::Configuration[:github_url]}", :class => 'github', target: '_blank'}".html_safe

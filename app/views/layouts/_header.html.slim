@@ -16,11 +16,10 @@ header.header
           = link_to t('layouts.header.help'), Configuration[:support_forum], target: :_blank, :class => 'header-nav-item',  id: 'guidelines_header_modal' if Configuration[:support_forum].present?
 
         li.header-nav-li
-          = link_to t('layouts.header.blog'), Configuration['blog_url'], target: :_blank, class: 'header-nav-item' if Configuration['blog_url'].present?
+          = link_to t('layouts.header.what_is'), "#", target: :_blank, class: 'header-nav-item'
 
-        li.header-nav-li.locales
-          - I18n.available_locales.map(&:to_s).sort.reverse.each do |locale|
-              = link_to locale, params.merge(locale: locale)
+        li.header-nav-li
+          = link_to t('layouts.header.blog'), Configuration['blog_url'], target: :_blank, class: 'header-nav-item' if Configuration['blog_url'].present?
 
         - if current_user
           li.header-nav-li.user
