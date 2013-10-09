@@ -16,7 +16,7 @@ header.header
           = link_to t('layouts.header.help'), Configuration[:support_forum], target: :_blank, :class => 'header-nav-item',  id: 'guidelines_header_modal' if Configuration[:support_forum].present?
 
         li.header-nav-li
-          = link_to t('layouts.header.what_is'), "#", target: :_blank, class: 'header-nav-item'
+          = link_to t('layouts.header.whatis'), Configuration['whatis'], target: :_blank, class: 'header-nav-item'
 
         li.header-nav-li
           = link_to t('layouts.header.blog'), Configuration['blog_url'], target: :_blank, class: 'header-nav-item' if Configuration['blog_url'].present?

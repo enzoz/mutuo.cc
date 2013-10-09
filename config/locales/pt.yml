@@ -345,6 +345,7 @@ pt:
       submit: Envie seu bem
       profile: "meu perfil"
       account: "minha conta"
+      what_is: "o que é"
     user:
       logout: Sair
       my_credits: "Meus créditos"
