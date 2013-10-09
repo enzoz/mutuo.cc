@@ -37,6 +37,7 @@ end
   email_no_reply: 'no-reply@mutuo.cc',
   facebook_url: "http://facebook.com/mutuo.cc",
   facebook_app_id: '1405409603010977',
+  twitter_url: 'https://twitter.com/mutuo_cc',
   twitter_username: "mutuo_cc",
   mailchimp_url: "",
   catarse_fee: '0.15',
@@ -44,14 +45,15 @@ end
   base_domain: 'mutuo.cc',
   uservoice_secret_gadget: 'change_this',
   uservoice_key: 'uservoice_key',
-  project_finish_time: '02:59:59'
+  project_finish_time: '02:59:59',
+  mandrill_username: 'enzozuccolotto@gmail.com',
+  mandrill_api_key: 'PhwKttWY1EFr1r8jfYI8Eg'
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by_name name
    conf.update_attributes({
      value: value
    })
 end
-
 
 # Channel.find_or_create_by_name!(
 #   name: "Channel name",

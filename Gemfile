@@ -129,6 +129,7 @@ group :test do
   gem 'shoulda'
   gem 'factory_girl_rails'
   gem 'capybara',   '~> 2.1.0'
+  gem 'capybara-webkit'
   gem 'jasmine'
   gem 'coveralls', require: false
   gem 'selenium-webdriver', '~> 2.35.1'

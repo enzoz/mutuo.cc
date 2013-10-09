@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :redirect_user_back_after_login, unless: :devise_controller?
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :allow_params_authentication!, if: :devise_controller?
 
   rescue_from ActionController::RoutingError, with: :render_404
   rescue_from ActionController::UnknownController, with: :render_404
@@ -126,6 +127,9 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name,
+                                                            :email,
+                                                            :password) }
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:name,
                                                             :email,
                                                             :password) }
   end
