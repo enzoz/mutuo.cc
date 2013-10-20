@@ -29,7 +29,7 @@ end
   company_name: 'Mútuo',
   host: 'mutuo.cc',
   base_url: "http://mutuo.cc",
-  blog_url: "http://blog.mutuo.cc",
+  blog_url: "http://mutuo.cc/blog",
   email_contact: 'contato@mutuo.cc',
   email_payments: 'financeiro@mutuo.cc',
   email_projects: 'projetos@mutuo.cc',
