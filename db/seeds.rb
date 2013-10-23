@@ -47,7 +47,8 @@ end
   uservoice_key: 'uservoice_key',
   project_finish_time: '02:59:59',
   mandrill_username: 'enzozuccolotto@gmail.com',
-  mandrill_api_key: 'PhwKttWY1EFr1r8jfYI8Eg'
+  mandrill_api_key: 'PhwKttWY1EFr1r8jfYI8Eg',
+  faq_url: 'http://mutuo.cc/blog/como-funciona/'
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by_name name
    conf.update_attributes({
