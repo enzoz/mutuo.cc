@@ -13,7 +13,7 @@ header.header
             = submit_tag
 
         li.header-nav-li
-          = link_to t('layouts.header.help'), Configuration[:support_forum], target: :_blank, :class => 'header-nav-item',  id: 'guidelines_header_modal' if Configuration[:support_forum].present?
+          = link_to t('layouts.header.howitworks'), Configuration[:support_forum], target: :_blank, :class => 'header-nav-item',  id: 'guidelines_header_modal' if Configuration[:support_forum].present?
 
         li.header-nav-li
           = link_to t('layouts.header.what_is'), Configuration['what_is'], target: :_blank, class: 'header-nav-item'

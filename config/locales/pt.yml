@@ -110,6 +110,7 @@ pt:
       submit: "Envie um projeto"
       discover: "Descubra projetos"
       terms_link: "Termos de uso"
+      howitworks: &howitworks "Como funciona"
     texts:
       copyleft: "Feito com amor."
   main:
@@ -245,8 +246,8 @@ pt:
     title: "Meus créditos"
   credits_mailer:
     request_refund_from:
-      subject: "Estorno do apoio ao projeto %{name}"
-      subject_html: "Usuário %{name} pediu extorno referente ao apoio %{backer_key} para o projeto %{backer_project} no valor de %{backer_value} efetuado pelo serviço %{backer_payment_service}."
+      subject: "Estorno do apoio ao bem %{name}"
+      subject_html: "Usuário %{name} pediu extorno referente ao apoio %{backer_key} para o bem %{backer_project} no valor de %{backer_value} efetuado pelo serviço %{backer_payment_service}."
       user_name: 'Usúario'
       user_email: 'E-mail do usuário'
       payer_email: 'E-mail usado no meio de pagamento'
@@ -339,6 +340,7 @@ pt:
       blog: blog
       help: ajuda
       faq: FAQ
+      howitworks: *howitworks
       signup: cadastre-se
       signin: login
       discover: Descubra
