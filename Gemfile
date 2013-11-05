@@ -109,10 +109,11 @@ group :production do
   #gem 'dalli'
 end
 group :development do
-  gem "letter_opener"
+  gem 'letter_opener'
   gem 'foreman'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'clean_logger'
   # Uncomment only for optimization, should be commented on master branch
   # gem 'rack-mini-profiler'
 end
