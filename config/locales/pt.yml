@@ -73,15 +73,15 @@ pt:
       truncate: "..."
   statistics:
     backers:
-      subtitle: apoiadores
+      subtitle: "compradores mútuos"
     goal:
       subtitle: "atingidos de %{total}"
-  project_by: "projeto por"
+  project_by: "bem proposto por"
   tell_about_this_back: "Conte para o mundo sobre o seu apoio!"
   share_my_backs: "Confira o projeto "
   tell_about_this_project: "Conte para o mundo sobre o seu projeto!"
   share_my_projects: "Confira o projeto "
-  count_backed_projects: "apoiou %{total} projetos"
+  count_backed_projects: "comprou %{total} bens"
   footer:
     titles:
       about: "Sobre nós"
@@ -169,9 +169,8 @@ pt:
         more_links: 'URL da loja virtual com o bem *'
         how_know: 'Como você conheceu o Mútuo?'
       reward:
-        description: Descrição
-        maximum_backers: "Máximo de apoiadores"
-        minimum_value: "Valor mínimo"
+        maximum_backers: "Número de compradores mútuos"
+        minimum_value: "Valor pago por cada comprador"
       user:
         moip_login: 'Login do MoIP'
         moip_login_hint: '(Como criar uma conta)'
@@ -207,9 +206,9 @@ pt:
     should_not_back_if_maximum_backers_been_reached: "já atingiu seu número máximo de apoiadores"
     value_must_be_at_least_rewards_value: "deve ser pelo menos %{minimum_value} para a recompensa selecionada"
     project_should_be_online: "Você não pode compartilhar um bem que não está no ar"
-  project_plural: projetos
-  backer_plural: apoiadores
-  backer_singular: apoiador
+  project_plural: "bens mútuos"
+  backer_plural: "compradores mútuos"
+  backer_singular: "comprador mútuo"
   project_singular: bem
   click_here: "Clique aqui"
   clicking_here: "clicando aqui"
@@ -284,7 +283,7 @@ pt:
     hints:
       backer:
         credits: "Você possui <strong>%{credits}</strong> em créditos e pode apoiar até este valor sem precisar realizar um novo pagamento."
-        value: "Você escolhe o valor ;) a partir de R$ 10 está ótimo."
+        value: "Você escolhe o valor ;) a partir de <strong>%{value}</strong> está ótimo."
       project:
         video_url_edit: 'Cole aqui o link do seu vídeo hospedado no Vimeo'
         about: "Conte-nos um pouco sobre sua inspiração para realizar o projeto, sua história e o que será entregue ao final. Seja sucinto e fuja daquelas formalidades de editais. Nada de OBJETIVO, JUSTIFICATIVA, PÚBLICO-ALVO... Presenteie seus leitores com algo que mexa com eles e seja muito transparente em relação a expectativa sobre o projeto."
@@ -301,7 +300,6 @@ pt:
         first_backers: "Para sua campanha ter sucesso, é fundamental trazer a sua rede de contato mais próxima. Por isso, liste aqui quem você acredita que serão seus primeiros 20 apoiadores"
       reward:
         description: "Descreva sua recompensa de um jeito que desperte o interesse das pessoas para apoiar o projeto. Não seja tímido!"
-        maximum_backers: "Se sua recompensa é limitada, informe o máximo de pessoas."
         minimum_value: "Este é valor mínimo de apoio para escolher esta recompensa."
         days_to_delivery: "Informe em quantos dias, após o sucesso do projeto, você planeja entregar essa recompensa"
     labels:
@@ -324,8 +322,7 @@ pt:
         first_backers: "Lista com os primeiros apoiadores *"
         how_know: "Como você conheceu o Mútuo? *"
       reward:
-        days_to_delivery: "Previsão de entrega"
-        maximum_backers: "Máximo de apoiadores (opcional)"
+        maximum_backers: "Máximo de donos mútuos"
     optional: " (opcional)"
   found_plural: Encontrados
   found_singular: Encontrado
@@ -344,7 +341,7 @@ pt:
       signup: cadastre-se
       signin: login
       discover: Descubra
-      submit: Envie seu bem
+      submit: "Envie seu bem"
       profile: "meu perfil"
       account: "minha conta"
       what_is: "o que é"
@@ -408,15 +405,15 @@ pt:
       title: "Campos para o admin"
     back_project:
       display_status:
-        reached_goal: "Este projeto será bem-sucedido e financiado em %{date}"
-        not_reached_goal: "Este projeto só será financiado se pelo menos %{goal} forem atingidos até %{date}"
-        failed: "Este projeto não atingiu o mínimo de %{goal} até %{date} e não foi financiado"
-        rejected: "Este projeto foi rejeitado"
-        successful: "Este projeto foi bem-sucedido e foi financiado em %{date}"
+        reached_goal: "Este bem será bem-sucedido e financiado em %{date}"
+        not_reached_goal: "Este bem só será comprado se pelo menos %{goal} forem atingidos até %{date}"
+        failed: "Este bem não atingiu o mínimo de %{goal} até %{date} e não foi comprado"
+        rejected: "Este bem foi rejeitado"
+        successful: "Este bem foi bem-sucedido e foi financiado em %{date}"
         waiting_funds: "Aguardando a confirmação de boletos para saber se este projeto será financiado."
-        draft: "Esse projeto é apenas um rascunho e ainda não está aberto para receber apoios."
+        draft: "Essa proposta de bem é apenas um rascunho e ainda não está disponível."
       reached_of: "Atingidos de"
-      submit: "Apoiar este projeto"
+      submit: "Comprar este bem"
     backers:
       backer:
         anonymous_backer: "Apoiador anônimo"
@@ -439,7 +436,7 @@ pt:
       new:
         cannot_back: "Não é possível apoiar este projeto no momento. Por favor, apoie outros projetos."
         header:
-          subtitle: "Você está a poucos passos de fazer a diferença e se tornar parte deste projeto."
+          subtitle: "Você está a poucos passos de fazer a diferença e compartilhar esse bem."
           title: "Oohh yeah!"
         no_reward: "Obrigado. Eu só quero ajudar o projeto."
         submit: "Revisar e realizar pagamento"
@@ -539,14 +536,14 @@ pt:
       confirmed: "Confirmados"
       pending: "Pendentes"
     project_header:
-      subtitle_html: "Um projeto de %{link}"
-      without_city: "Um projeto de %{category_name} por %{author}"
-      with_city: "Um projeto de %{category_name} por %{author} em %{city}"
+      subtitle_html: "Bem mútuo em %{link}"
+      without_city: "Bem mútuo em %{category_name} proposto por %{author}"
+      with_city: "Bem mútuco %{category_name} proposto por %{author} em %{city}"
     project_updates:
       empty: "Este projeto ainda não teve novidades. Aguarde =D"
       submit: "Enviar Novidade"
       comment: "Texto da sua Novidade"
-      exclusive: "Visível apenas para apoiadores"
+      exclusive: "Visível apenas para os compradores"
       title: "Título da sua Novidade"
       destroy: "Remover Novidade"
       destroy_confirmation: "Deseja remover esta novidade?"
@@ -556,6 +553,7 @@ pt:
       edit_reward: "Editar recompensa"
       reward_title: "Para %{minimum} ou mais"
       reward_deliver_time: "<b>Estimativa de Entrega:</b> %{prevision}"
+      goal: "<b>Valor a ser compartilhado:</b> %{goal}"
       backs_to_confirm:
         one: "1 apoio em prazo de confirmação."
         other: "%{count} apoios em prazo de confirmação."
@@ -577,7 +575,7 @@ pt:
         link_reward: 'Baixar relatório dos apoiadores da recompensa de '
       menu:
         about: Sobre
-        backers: Apoiadores
+        backers: Compradores
         comments: Comentários
         updates: Novidades
         edit: Edição
@@ -592,7 +590,7 @@ pt:
         title: "Faça parte disto e compartilhe este projeto"
     new:
       subtitle: "A hora para fazer acontecer é agora! Estamos loucos para saber o que você está aprontando..."
-      title: "Agooora sim! Envie seu projeto, campeão."
+      title: "Só clicar para propor seu bem :)"
       introduction_html: "Preencha o formulário abaixo da forma mais completa objetiva, pois quanto mais <br/>completo nós recebermos o seu projeto, mais rápido ele entrará na plataforma online."
       permalink_important: 'Tente não usar Underline, hífen, acentos e etc.'
       permalink_hint: 'Simplifique a URL do seu projeto. Imagine que seu apoiador precisará lembrar do endereço para divulgar o projeto no bar.'
@@ -638,12 +636,20 @@ pt:
       submit: "Enviar o projeto"
       send_project: "Quero enviar meu projeto."
       subtitle: "A hora de montar o seu projeto é agora. Estamos loucos para saber o que você está aprontando..."
-      title: "Agooora sim! Envie seu projeto, campeão."
+      title: "Só clicar para propor seu bem :)"
       legend_html: "Após preencher o formulário abaixo, você receberá uma página de projeto em rascunho. Lá você irá adicionar as recompensas e poderá compartilhar com seus amigos para ter um projeto ainda mais afiado.<br><br>As informações preenchidas abaixo não são definitivas, mas lembre-se de que quanto mais consistente estiver o seu projeto nesse envio, mais rápido ele irá para o ar.<br><br><b>Importante</b> <i> O Mútuo é uma plataforma curada, o que significa que vamos avaliar o foco, a viabilidade, e a consistência do seu projeto durante o processo de Rascunho. Se entendermos que o seu projeto não está de acordo com os nossos <a href='https://docs.google.com/document/d/1Heh9LlvoSoD0lUfbmV5WlISJ3nqmGpEQiw15TBuCn-0/edit' target='_blank' >Critérios de Seleção</a>, ele poderá ser recusado pela equipe de curadores.</i>"
     twitter:
       take_a_look: "Confira o projeto %{name} no @mutuo_cc"
     video_embed:
       a_project_by_html: "Um projeto de %{link} no"
+    warnings:
+      toggle_warning: "minimizar informações"
+      draft:
+        header: "ATENÇÃO!  Este bem ainda foi prosposto... Seja bem-vindo ao rascunho o/"
+        paragraph_1: "Este bem ainda está em rascunho, isso significa que nenhuma informação abaixo é definitiva até o bem entrar no ar. Por isso, aproveite! Dê uma olhada no vídeo, na descrição e na forma como o compartilhamento vai acontecer e <strong> deixe seu feedback na aba de comentários.</strong>"
+        paragraph_2: "<strong>Lembrando que:</strong> O Mútuo é uma plataforma curada, o que significa que vamos avaliar o foco, a viabilidade, e a consistência da prospota do seu bem durante o processo de rascunho. Se entendermos que o seu bem não está de acordo com os nossos %{criteria_link}, ele poderá ser recusado pela equipe de curadores."
+        paragraph_3: "Sinta-se a vontade pra nos enviar perguntas e feedbacks durante todo o processo =)"
+        paragraph_4: "Pra fazer isso acesse a nossa %{support_link}"
   projects_mailer:
     start_project_email:
       subject: "Projeto enviado por %{name}"
@@ -684,7 +690,7 @@ pt:
       title: "Como funciona o Mútuo?"
       introduction: "O Mútuo é uma ferramenta diferente – e colaborativa – para tirar o seu projeto do papel."
       legend_html: "Preste atenção ao passo-a-passo e nas perguntas respondidas para decidir se <br>o Mútuo é o caminho para financiar o seu projeto."
-      title_one: "Envie seu projeto"
+      title_one: "Propronha seu bem"
       step_one: "Projetos são ações! E estamos de braços abertos para receber ações pequenas, grandes, engraçadas, sérias, tradicionais, inovadoras... Adoramos projetos que precisam de pouco dinheiro e que geram grande impacto em suas comunidades."
       title_two: "Curadoria"
       step_two: "Ao recebermos seu projeto, ele estará sob a responsabilidade da equipe de curadores.  O objetivo aqui é dar dicas para <strong>aumentar as chances do seu projeto ser bem-sucedido</strong> e filtrar projetos NON-SENSE. Lembre-se que queremos tanto o sucesso do seu projeto quanto você. A gente só ganha quando você ganha!"
@@ -828,8 +834,8 @@ pt:
     show:
       attention: "Atenção"
       tabs:
-        backed_projects: "Projetos apoiados"
-        created_projects: "Projetos criados"
+        backed_projects: "Bens comprados"
+        created_projects: "Bens propostos"
         comments: Comentários
         credits: Créditos
         settings: Preferências

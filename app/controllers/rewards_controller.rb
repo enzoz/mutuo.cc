@@ -17,10 +17,15 @@ class RewardsController < ApplicationController
   end
 
   def update
+    @reward.update_attribute(:minimum_value, (parent.goal / @reward.maximum_backers))
+    @reward.reload
     update! { project_by_slug_path(permalink: parent.permalink) }
   end
 
   def create
+    @reward.minimum_value = (@reward.project.goal / @reward.maximum_backers).to_f
+    @reward.days_to_delivery = @reward.project.online_days
+    @reward.description = "Default reward [#{@reward.project.name}]"
     create! { project_by_slug_path(permalink: parent.permalink) }
   end
 

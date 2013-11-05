@@ -142,7 +142,7 @@
                 = link_to @project.user.other_link, @project.user.other_link, target: '_blank'
 
         .clearfix
-        - if can?(:update, @project)
+        - if can?(:update, @project) && @project.rewards.size < 1
           .bootstrap-twitter.bootstrap-form
             .alert.alert-info
               h4.alert-header= t('.no_rewards_warning_title')
