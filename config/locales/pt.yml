@@ -107,8 +107,8 @@ pt:
       near: "Próximos a mim"
       expiring: "Na reta final"
       recents: "Recentes"
-      submit: "Envie um projeto"
-      discover: "Descubra projetos"
+      submit: "Proponha um bem"
+      discover: "Encontre um bem"
       terms_link: "Termos de uso"
       howitworks: &howitworks "Como funciona"
     texts:
