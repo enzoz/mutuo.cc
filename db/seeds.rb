@@ -49,6 +49,9 @@ end
   mandrill_username: 'enzozuccolotto@gmail.com',
   mandrill_api_key: 'PhwKttWY1EFr1r8jfYI8Eg',
   faq_url: 'http://mutuo.cc/blog/como-funciona/'
+  aws_access_key: "AKIAIQJGSG6RLZAIWMAA",
+  aws_secret_key: "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",
+  aws_bucket: "mutuo-dev"
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by_name name
    conf.update_attributes({
@@ -56,20 +59,12 @@ end
    })
 end
 
-# Channel.find_or_create_by_name!(
-#   name: "Channel name",
-#   permalink: "sample-permalink",
-#   description: "Lorem Ipsum"
-# )
-
-
 OauthProvider.find_or_create_by_name!(
   name: 'facebook',
   key: '1405409603010977',
   secret: '72712d7f5780efbac72e28add09b1ec0',
   path: 'facebook'
 )
-
 
 puts
 puts '============================================='
