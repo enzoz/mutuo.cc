@@ -48,7 +48,7 @@ end
   project_finish_time: '02:59:59',
   mandrill_username: 'enzozuccolotto@gmail.com',
   mandrill_api_key: 'PhwKttWY1EFr1r8jfYI8Eg',
-  faq_url: 'http://mutuo.cc/blog/como-funciona/'
+  faq_url: 'http://mutuo.cc/blog/como-funciona/',
   aws_access_key: "AKIAIQJGSG6RLZAIWMAA",
   aws_secret_key: "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",
   aws_bucket: "mutuo-dev"
