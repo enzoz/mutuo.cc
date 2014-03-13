@@ -8,7 +8,7 @@ puts 'Seeding the database...'
   { pt: 'São Paulo', en: 'São Paulo' },
   { pt: 'Floripa', en: 'Floripa' }
 ].each do |name|
-   category = Category.find_or_initialize_by_name_pt name[:pt]
+   category = Category.find_or_initialize_by(name_pt: name[:pt])
    category.update_attributes({
      name_en: name[:en]
    })
@@ -22,7 +22,7 @@ puts 'Seeding the database...'
   'project_in_wainting_funds', 'credits_warning', 'backer_confirmed_after_project_was_closed',
   'backer_canceled_after_confirmed', 'new_user_registration'
 ].each do |name|
-  NotificationType.find_or_create_by_name name
+  NotificationType.find_or_create_by(name: name)
 end
 
 {
@@ -53,13 +53,13 @@ end
   aws_secret_key: "J2XYaQDJZMM8nPD1nWSGZCfptcD//W+i5wmQ68FK",
   aws_bucket: "mutuo-dev"
 }.each do |name, value|
-   conf = Configuration.find_or_initialize_by_name name
+   conf = Configuration.find_or_initialize_by(name: name)
    conf.update_attributes({
      value: value
    })
 end
 
-OauthProvider.find_or_create_by_name!(
+OauthProvider.find_or_create_by!(
   name: 'facebook',
   key: '1405409603010977',
   secret: '72712d7f5780efbac72e28add09b1ec0',
