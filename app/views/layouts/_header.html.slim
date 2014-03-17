@@ -5,15 +5,14 @@ header.header
     nav.header-nav
       ul
         li.header-nav-li
-          = link_to t('layouts.header.submit'), guidelines_start_path, :class => 'submit-project'
+          = render partial: "layouts/new_good"
+        li.header-nav-li
+          = render partial: "layouts/join_good"
 
         li.header-nav-li.search
           = form_tag explore_path, :method => 'GET', :class=>'discover-form' do
             = text_field_tag :pg_search, nil, autocomplete: "off", value: params[:pg_search], placeholder: t('layouts.header.discover'), class: "discover-form-input"
             = submit_tag
-
-        li.header-nav-li
-          = link_to t('layouts.header.howitworks'), Configuration[:support_forum], target: :_blank, :class => 'header-nav-item',  id: 'guidelines_header_modal' if Configuration[:support_forum].present?
 
         li.header-nav-li
           = link_to t('layouts.header.what_is'), Configuration['what_is'], target: :_blank, class: 'header-nav-item'
@@ -41,8 +40,6 @@ header.header
                   li.channel_trustee= link_to menu, path
               li.divider= link_to t('layouts.user.logout'), destroy_user_session_path, method: :delete
         - else
-          li.header-nav-li
-            = link_to t('layouts.header.signup'), new_user_registration_path, :class => 'header-nav-item'
           li.header-nav-li
             = link_to t('layouts.header.signin'), new_user_session_path, :class => 'header-nav-item'
 .clearfix

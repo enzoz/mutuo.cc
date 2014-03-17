@@ -10,16 +10,15 @@ $orange: #F69219
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif
   display: inline-block
   width: 100%
-  background: #fff
-  padding: 1em 0
-  border-bottom: 1px solid $border-gray
+  // padding: 1em 0
+  background: rgb(41, 61, 79)
   .logo
-    background: url("/assets/catarse_bootstrap/catarse-assets.png") repeat scroll -21px -14px transparent
+    background: url("/assets/logo_transp.png") transparent
     display: block
     float: left
-    height: 50px
-    text-indent: -9999em
     width: 67px
+    height: 55px
+    text-indent: -9999em
     transition: 0.4s all
     &:hover
       opacity: 0.5
@@ -29,13 +28,31 @@ $orange: #F69219
   text-align: right
   .header-nav-li
     display: inline-block
-    margin: 0 0 0 20px
+    margin: 0 0 0 25px
     line-height: 50px
     vertical-align: bottom
+    text-transform: uppercase
     a
       text-decoration: none
+      font-size: 1em
+      color: rgb(201, 201, 202)
       &:hover
         text-decoration: underline
+    .good
+      width: 160px
+      font-size: 1.6em
+      line-height: 20px
+      text-align: left
+      a
+        cursor: pointer
+        &:hover
+          text-decoration: none
+    .new
+      color: rgb(93, 224, 153)
+    .join
+      color: rgb(97, 219, 252)
+    .subheader
+      font-size: 12px
   .submit-project
     background: url("/assets/catarse_bootstrap/catarse-assets.png") repeat scroll -12px -256px transparent
     color: $green-one
@@ -74,28 +91,25 @@ $orange: #F69219
   width: 250px
   height: 36px
   .discover-form-input
-    +border-radius(3px)
     border: none
     height: 34px
     left: 32px
     position: absolute
     top: 0
     left: 0
-    width: 220px
+    width: 240px
     border: 1px $minimal_gryn solid
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif
     font-size: 13px
-    padding: 1px 1px 1px 30px
+    padding: 1px 1px 1px 10px
     transition: 0.4s all
-    &:focus
-      border: 1px solid $orange
   input[type="submit"]
     background: url("/assets/catarse_bootstrap/catarse-assets.png") no-repeat scroll -49px -81px transparent
     border: medium none
     height: 20px
     margin: 3px 5px 0 0
     position: absolute
-    left: 6px
+    right: 6px
     top: 6px
     text-indent: -9999em
     width: 20px
