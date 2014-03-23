@@ -9,15 +9,16 @@
           = image_tag "not_successful.#{I18n.locale}.png"
         - else
           = image_tag "waiting_confirmation.#{I18n.locale}.png"
-  .image = link_to image_tag(project.display_image, size: '220x140'), project_by_slug_path(project.permalink), title: project.name
-  .padding
-    h4.title    = link_to truncate(project.name, length: 50, separator: ''), project_by_slug_path(project.permalink), title: project.name
-    p.headline  = link_to truncate(project.headline, length: 140), project_by_slug_path(project.permalink), title: project.headline
-  .status
-    .padding
-      p.progress-percent = t('channels.projects.progress_html', percent: project.progress)
+  .image = link_to image_tag(project.display_image, size: '280x200'), project_by_slug_path(project.permalink), title: project.name
+  .information
+    h4.title= link_to truncate(project.name, length: 100, separator: ''), project_by_slug_path(project.permalink), title: project.name
+    .subtitle
+      span.icon-location2
+      = link_to(project.category, project_by_slug_path(project.permalink), title: project.category) + ", por #{project.user.name}"
+    p.headline= project.headline
+    .status
       .progress-bar = project.progress_bar
-      = link_to t('channels.projects.time_remaining_html', count: project.time_to_go[:time], unit: project.time_to_go[:unit]), project_by_slug_path(project.permalink), title: project.name, class: 'time-remaining'
-      = link_to t('channels.projects.pledged_html', value: number_to_currency(project.pledged, precision: 0)), project_by_slug_path(project.permalink), title: project.name, class: 'money-raised'
-
-
+      .stats
+        .price = t('channels.projects.price_html', price: "32,00")
+        .owners = t('channels.projects.number_owners_html', owners: "6", total_owners: "10")
+        .time-remaining = t('channels.projects.time_remaining_html', count: project.time_to_go[:time], unit: project.time_to_go[:unit])

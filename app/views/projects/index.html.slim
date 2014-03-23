@@ -29,11 +29,10 @@
   .container
     .main
       section.recents_projects.list
-        header
-          h2.list-title= Project.model_name.human.pluralize
-          = link_to t('main.links.recents'), explore_path, class: "more-projects"
         .projects
           == render @projects
+        header
+          = link_to t('main.links.recents'), explore_path, class: "more-projects"
     aside.main-sidebar
       section.main-sidebar-division
         h3.title= t('sidebar.titles.blog')

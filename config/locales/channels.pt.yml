@@ -25,6 +25,8 @@ pt:
         one: "<span>%{count} %{unit}</span> restante"
         other: "<span>%{count} %{unit}</span> restantes"
       pledged_html: "<span>%{value}</span> levantados"
+      number_owners_html: "<span>%{owners} de %{total_owners}</span> donos mútuos"
+      price_html: "<span>R$ %{price}</span> por dono mútuo"
       new:
         title: "Agooora sim! Envie seu projeto para o Canal Asas"
         subtitle: "A hora de montar o seu projeto é agora. Estamos loucos para saber o que você está aprontando..."
